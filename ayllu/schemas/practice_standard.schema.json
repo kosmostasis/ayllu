@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Practice standard",
+  "description": "Schema for a statewide practice standard (every ministry must comply)",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "owner": { "type": "string" },
+    "scope": { "type": "string", "enum": ["statewide"] },
+    "mandatory": { "type": "boolean", "default": true }
+  },
+  "required": ["id", "name", "scope"]
+}
