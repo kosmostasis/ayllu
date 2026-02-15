@@ -2,6 +2,8 @@
 
 Mono-repo for **ayllu** (white-label state OS primitives, COFOG-aligned) and **Venezuela** diaspora civic infrastructure. Complementary to host-state power structures; no representation claims.
 
+**Principles:** [Cosmo-Localism](https://wiki.p2pfoundation.net/Cosmo-Localism) (global coordination + locally grounded action) and **d/acc** (defense, decentralization, resilience) underpin the design. See [brand/STYLE_GUIDE.md](brand/STYLE_GUIDE.md) for narrative pillars and tone.
+
 ## Structure
 
 - **`ayllu/`** — State OS primitives: taxonomy, modules, practices, schemas, templates.
