@@ -1,0 +1,14 @@
+# Downloaded data (store ZIP in private artifact store; do not commit)
+downloads/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
