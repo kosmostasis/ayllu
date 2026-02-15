@@ -2,12 +2,19 @@
 downloads/
 *.zip
 
+# Corpus binaries (provenance and INDEX are committed)
+venezuela/corpus/**/*.pdf
+venezuela/corpus/**/*.html
+
 # Python
 __pycache__/
 *.py[cod]
 .Python
 .venv/
 venv/
+
+# Local audit logs (guardrail redactions) — do not commit
+local_audit/
 
 # OS
 .DS_Store
