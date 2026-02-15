@@ -1,0 +1,8 @@
+# Provenance — MCM priority docs
+# Updated by scripts/download_corpus.sh on each run.
+version: 0.1
+classification: MCM
+source_context: María Corina Machado / Vente
+
+files: []
+# Each entry: { file: basename, url: ..., capture_time: ISO8601, sha256: ... }
