@@ -1,12 +1,17 @@
-# Venezuela — Country Runtime Config (stub)
+# Venezuela — Country Runtime Config (first “live” CRC)
 # Positioning and overrides: see venezuela/blueprint/venezuela_overrides.yml
+# Themes aligned to Plan País mesas + MCM priorities: justice, electoral, economy, admin, social.
 
 version: 0.1
 country: venezuela
 
 modules:
-  baseline: []   # use full COFOG baseline; empty = all
-  optional: [diaspora]   # diaspora & return as signal module
+  # COFOG baseline: enable all; emphasize themes from corpus (justice=03, economic=04, education=09, social=10, etc.)
+  baseline: []
+  # Optional signal modules; diaspora aligns with Civic House and diaspora civic infra
+  optional: [diaspora]
+  # Plan País / MCM themes (for product/engineering): justice, electoral, economy, public_admin, social, education_culture
+  theme_priority: [justice, electoral, economy, public_admin, social, education_culture]
 
 canon:
   state_capacity: true
