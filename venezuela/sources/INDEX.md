@@ -22,7 +22,7 @@ Run `../../scripts/fetch_plan_pais_and_mcm.sh [OUT_DIR]` to download. Do not com
 
 ## Umbrella doc
 
-- **Plan País:** Locate any “integrator” PDF that references the mesas. If not found, build `plan-pais_compendium.md` stitching each mesa’s executive summary + key policies.
+- **Plan País compendium (canonical):** [../spec/plan-pais_compendium.md](../spec/plan-pais_compendium.md) — stitch each mesa’s executive summary + key policies; includes “what’s missing relative to AylluOS” annex. Edit only the spec version.
 - **MCM:** Use Venezuela Tierra de Gracia + Plan para VZLA as core program docs.
 
 ## Diff map
