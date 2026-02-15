@@ -1,0 +1,33 @@
+# COFOG-aligned base taxonomy (UN Stats Division)
+# https://unstats.un.org/unsd/classifications/cofog/revision
+version: 0.1
+source: UN COFOG
+
+functions:
+  - code: 01
+    name: General public services
+    notes: Treasury/Finance, Foreign Affairs, Civil Service, Planning, Stats/Registry
+  - code: 02
+    name: Defence
+  - code: 03
+    name: Public order and safety
+    notes: Interior/Home, Justice
+  - code: 04
+    name: Economic affairs
+    notes: Economy/Industry/Trade, Labor/Skills, Transport, Agriculture, Energy
+  - code: 05
+    name: Environmental protection
+    notes: Environment/Climate/Water
+  - code: 06
+    name: Housing and community amenities
+    notes: Housing/Urban, Local/Regional
+  - code: 07
+    name: Health
+  - code: 08
+    name: Recreation, culture and religion
+    notes: Culture/Heritage, Sport, (optional Religious affairs)
+  - code: 09
+    name: Education
+  - code: 10
+    name: Social protection
+    notes: Welfare/Social Dev, Pensions/Disability/Family
