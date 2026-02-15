@@ -1,0 +1,29 @@
+# Venezuela — Country Runtime Config (stub)
+# Positioning and overrides: see venezuela/blueprint/venezuela_overrides.yml
+
+version: 0.1
+country: venezuela
+
+modules:
+  baseline: []   # use full COFOG baseline; empty = all
+  optional: [diaspora]   # diaspora & return as signal module
+
+canon:
+  state_capacity: true
+  future_risk_rd: true
+
+resources:
+  static_baseline: {}
+  dynamic_overrides: null
+
+constraints:
+  legal_posture: host_nation_compliant, no_representation_claims
+  comms_posture: safe_terminology_per_ops_guardrails
+  privacy_posture: data_minimization
+
+metrics:
+  per_module: []
+  standards: [delivery_standard, evidence_evaluation_standard, foresight_standard]
+
+# Overlay (positioning)
+blueprint_ref: ../../venezuela/blueprint/venezuela_overrides.yml
