@@ -1,0 +1,18 @@
+# Crosswalk: COFOG functions <-> ministry/module names (context-dependent)
+version: 0.1
+
+mapping:
+  "01": [treasury, finance, foreign_affairs, civil_service, planning, stats_registry]
+  "02": [defence]
+  "03": [interior, home, justice]
+  "04": [economy, industry, trade, labor, skills, transport, infrastructure, agriculture, food, energy, resources]
+  "05": [environment, climate, water]
+  "06": [housing, urban, local, regional]
+  "07": [health]
+  "08": [culture, heritage, sport]
+  "09": [education]
+  "10": [welfare, social_dev, pensions, disability, family]
+
+meta_capabilities:  # CANON — not COFOG codes
+  state_capacity: [delivery_unit, evaluation_unit, procurement, org_design, civil_service_training]
+  future_risk_rd: [risk_register, horizon_scanning, frontier_tech_governance, regulatory_sandboxes]
