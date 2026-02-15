@@ -1,0 +1,31 @@
+# Country Runtime Config — template
+# Copy to ayllu/runtime/<country>.yml and fill.
+
+version: 0.1
+country: ""  # e.g. venezuela
+
+# Enabled modules: COFOG baseline (from taxonomy) + optional
+modules:
+  baseline: []   # list COFOG codes or module ids to enable; empty = all baseline
+  optional: []   # e.g. diaspora, wellbeing, digital_transformation, anti_corruption
+
+# CANON meta-ministries (always on)
+canon:
+  state_capacity: true   # Ministry of State Capacity (Systems & Delivery)
+  future_risk_rd: true   # Ministry of Future, Risk, and Civilizational R&D
+
+# Resource allocation
+resources:
+  static_baseline: {}    # e.g. per-module default caps or weights
+  dynamic_overrides: null  # path to override file or inline overrides
+
+# Constraints / guardrails
+constraints:
+  legal_posture: ""    # e.g. host_nation_compliant, no_representation_claims
+  comms_posture: ""    # safe terminology; reference ops/GUARDRAILS.md
+  privacy_posture: ""  # data minimization; no sensitive personal data without policy
+
+# Metrics: minimum viable measurement per module
+metrics:
+  per_module: []       # list of module ids with required metrics
+  standards: []        # e.g. delivery_standard, evidence_evaluation_standard, foresight_standard
