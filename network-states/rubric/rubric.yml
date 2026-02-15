@@ -1,0 +1,13 @@
+version: 0.1
+axes:
+  legitimacy_path: {max: 5, desc: "Compliance & credible governance; no coup vibes"}
+  territory_density: {max: 5, desc: "Physicality + repeat density"}
+  economic_engine: {max: 5, desc: "Jobs/revenue/investment; not only community"}
+  identity_credentials: {max: 5, desc: "Onboarding + credentials + rights/obligations"}
+  governance_security: {max: 5, desc: "Decision systems + dispute handling + safety"}
+  dacc_alignment: {max: 5, desc: "Defense, decentralization, resilience"}
+  execution_capacity: {max: 5, desc: "Ships + operates; low Discord-theater"}
+modifiers:
+  venezuela_similarity: {min: -2, max: 2, desc: "Diaspora fit, remittance rails, complementary posture"}
+outputs:
+  composite_score: "sum(axes) + venezuela_similarity"
