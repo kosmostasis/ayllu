@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 axes:
   legitimacy_path: {max: 5, desc: "Compliance & credible governance; no coup vibes"}
   territory_density: {max: 5, desc: "Physicality + repeat density"}
