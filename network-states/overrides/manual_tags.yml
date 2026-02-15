@@ -1,0 +1,13 @@
+# Manual overrides (human-in-the-loop) for NS dashboard scoring
+# society_id must match id in societies.csv. Optional: manual_score_overrides, tags, confidence_override.
+# Loaded by scripts/ns_ingest_score.py when present.
+version: 0.1
+
+# overrides:
+#   - society_id: example-id
+#     confidence_override: A   # A | B | C
+#     manual_score_overrides:
+#       territory_density: 3
+#       venezuela_similarity: 1
+#     tags_add: [diaspora, geographic]
+overrides: []
