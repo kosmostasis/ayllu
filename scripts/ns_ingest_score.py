@@ -28,6 +28,7 @@ OVERRIDES_PATH = REPO_ROOT / "network-states" / "overrides" / "manual_tags.yml"
 
 @dataclass
 class Score:
+    cosmo_localism: int = 0
     legitimacy_path: int = 0
     territory_density: int = 0
     economic_engine: int = 0
@@ -39,7 +40,7 @@ class Score:
 
     def total(self) -> int:
         return (
-            self.legitimacy_path + self.territory_density + self.economic_engine
+            self.cosmo_localism + self.legitimacy_path + self.territory_density + self.economic_engine
             + self.identity_credentials + self.governance_security + self.dacc_alignment
             + self.execution_capacity + self.venezuela_similarity
         )
@@ -75,6 +76,13 @@ def heuristic_score(row: dict) -> Score:
     tags = _tag_set(row)
     text = _text(row, "mission", "name", "baseLocations")
     s = Score()
+    # Cosmo-localism: local, partners, pilot, place-based → boost; remote-only, extractive → low
+    if any(x in text for x in ("local", "partners", "pilot", "place-based", "place based", "community-owned", "co-own")):
+        s.cosmo_localism = 2
+    if any(x in text for x in ("partners", "local benefit", "local value", "replicable", "playbook")):
+        s.cosmo_localism = max(s.cosmo_localism, 1)
+    if "remote-only" in text or "extractive" in text or "remote control" in text:
+        s.cosmo_localism = 0
     if "geographic" in tags or "charter" in tags or "city" in tags:
         s.territory_density = 2
     if "pop-up" in tags or "popup" in tags or "events" in tags or "hybrid" in tags:
@@ -185,7 +193,7 @@ def write_outputs(scored: list) -> None:
         f.write("# Top success (heuristic + confidence)\n\n")
         f.write("Ranked by composite score. Confidence: A = complete data, B = missing one field, C = minimal.\n\n")
         for total, name, sid, s, _, conf in scored[:30]:
-            f.write(f"- **{total}** [{conf}] {name} — territory={s.territory_density} exec={s.execution_capacity} economic={s.economic_engine} gov={s.governance_security} id={s.identity_credentials} dacc={s.dacc_alignment} legit={s.legitimacy_path}\n")
+            f.write(f"- **{total}** [{conf}] {name} — cosmo_local={s.cosmo_localism} territory={s.territory_density} exec={s.execution_capacity} economic={s.economic_engine} gov={s.governance_security} id={s.identity_credentials} dacc={s.dacc_alignment} legit={s.legitimacy_path}\n")
 
     v = [(t, n, sid, sc, row, conf) for t, n, sid, sc, row, conf in scored if sc.venezuela_similarity > 0]
     v.sort(reverse=True, key=lambda x: (x[3].venezuela_similarity, x[0]))
