@@ -7,7 +7,9 @@
   1. **WS1 Corpus Agent** — Plan País + MCM corpus capture, provenance, indexing, compendium.
   2. **WS2 Landscape Agent** — NS dataset ingest, enrichment, clustering, scoring.
   3. **WS3 Civic House Agent** — kits/templates, ops playbooks, credentialing boundary, generator skill.
-  4. **OS Architect Agent** — COFOG baseline + CANON meta-ministries + runtime spec spine.
+  4. **WS4 Brand Agent** — Must read [AGENT_REQUIRED_READING.md](AGENT_REQUIRED_READING.md) (STYLE_GUIDE, GUARDRAILS).
+  5. **WS5 UI/UX Agent** — Must read [AGENT_REQUIRED_READING.md](AGENT_REQUIRED_READING.md) (MOBILE_PRINCIPLES, STYLE_GUIDE, GUARDRAILS).
+  6. **OS Architect Agent** — COFOG baseline + CANON meta-ministries + runtime spec spine.
 
 ## Git worktrees (concurrency primitive)
 
@@ -25,6 +27,10 @@ Each worktree runs one agent. Each agent submits PRs into `main`.
 ## Status
 
 See [STATUS.md](STATUS.md) for per-agent objective, last shipped, next tasks, blockers.
+
+## Required reading
+
+See [AGENT_REQUIRED_READING.md](AGENT_REQUIRED_READING.md) for per-agent required reading (STYLE_GUIDE, MOBILE_PRINCIPLES, GUARDRAILS, rubric).
 
 ## Reference
 
