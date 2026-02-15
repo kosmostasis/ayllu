@@ -1,0 +1,242 @@
+# Axis snippets for rubric.yml (repo keys: dacc_alignment, governance_security, venezuela_similarity)
+# Use when merging into rubric.yml; do not change these keys or pipeline will break.
+
+axes:
+  cosmo_localism:
+    name: "Cosmo-Localism alignment"
+    weight: 1.0
+    description: >
+      Measures whether the project enables global coordination (knowledge/capital/networks)
+      while grounding action locally (place-based implementation, local partners, local benefit),
+      avoiding extractive "remote control" dynamics.
+    signals_positive:
+      - "Supports local institutions/communities as co-owners/co-designers"
+      - "Place-based pilots, recurring physical nodes, or durable local partnerships"
+      - "Open playbooks/replicable methods that transfer capacity to local actors"
+      - "Local value capture: jobs, services, infrastructure, skills, or revenue retained locally"
+      - "Feedback loops from local implementation into global knowledge commons"
+      - "Transparent accountability to affected local stakeholders"
+    signals_negative:
+      - "Primarily remote/online influence without local grounding"
+      - "Extractive data collection or branding without local benefit"
+      - "Tokenized participation without real-world service delivery"
+      - "Outsized central control; weak local autonomy"
+      - "No evidence of local partners, pilots, or implementation"
+    scoring_anchors:
+      0: "Anti-local or extractive: explicitly bypasses/undermines local capacity; no local benefit."
+      1: "Weak: global community exists, but no local grounding or local value capture."
+      2: "Emerging: some local intent (chapters/events), but ad hoc and not tied to durable outcomes."
+      3: "Moderate: recurring local nodes/pilots plus some local partnerships; partial value capture."
+      4: "Strong: clear cosmo-local operating model; local partners co-own work; measurable local outcomes."
+      5: "Exemplary: durable local institutions + global commons flywheel; strong local autonomy, accountability,
+          and sustained capacity transfer across multiple locales."
+    measurement_notes:
+      - "Prefer evidence (leases, partner MoUs, pilots shipped, services delivered, budgets, outcomes) over claims."
+      - "If data is sparse, cap score at 3 unless independently verifiable evidence exists."
+
+  dacc_alignment:
+    name: "d/acc alignment"
+    weight: 1.0
+    description: >
+      Measures alignment with d/acc-style priorities: defense and resilience, decentralization,
+      safety-by-design, and avoiding fragile or extractive socio-technical systems.
+    signals_positive:
+      - "Security and safety practices documented (threat model, incident response, audits where relevant)"
+      - "Decentralization primitives (credible distributed governance, censorship resistance where needed)"
+      - "Resilience: redundancy, graceful degradation, robust ops under stress"
+      - "Privacy-preserving design where appropriate (minimize data, proofs over raw data)"
+      - "Clear harm-reduction posture; avoids coercive or reckless experimentation"
+    signals_negative:
+      - "Hype-driven 'move fast' posture without safety practices"
+      - "Centralized control disguised as decentralization"
+      - "Extractive surveillance/data capture as a business model"
+      - "No evidence of security/operational maturity"
+    scoring_anchors:
+      0: "Actively harmful: unsafe-by-design, surveillance/extraction, or reckless governance."
+      1: "Weak: rhetoric only; little evidence of safety, decentralization, or resilience."
+      2: "Emerging: some safety norms; partial decentralization; limited evidence."
+      3: "Moderate: documented practices; some resilient primitives; credible intent with partial proof."
+      4: "Strong: clear safety posture + resilient systems; decentralization is real and evidenced."
+      5: "Exemplary: safety, resilience, and decentralization are core; sustained track record of responsible ops."
+    measurement_notes:
+      - "Prefer evidence (audits, incident handling, architecture docs) over claims."
+      - "If data is sparse, cap score at 3 unless independently verifiable evidence exists."
+
+  legitimacy_path:
+    name: "Legitimacy path"
+    weight: 1.0
+    description: >
+      Measures compliance plausibility and legitimacy-by-constraints: clear legal posture,
+      host-nation compatibility, dispute handling, and non-coercive framing.
+    signals_positive:
+      - "Clear legal wrapper (entity type, jurisdiction, terms)"
+      - "Non-coercive posture; avoids representation claims"
+      - "Transparent dispute resolution and enforcement boundaries"
+      - "Host-nation compatibility (partnerships, permits, compliant operations)"
+      - "Clear governance documentation and accountability"
+    signals_negative:
+      - "Cosplay sovereignty; ambiguous claims of authority/representation"
+      - "No legal/compliance posture; unclear responsibility"
+      - "No dispute process; unclear enforcement"
+      - "Relies on intimidation or exclusionary rhetoric"
+    scoring_anchors:
+      0: "Illegible or adversarial: claims authority without basis; high compliance risk."
+      1: "Weak: unclear posture; no governance or dispute handling."
+      2: "Emerging: some documents; partial compliance story; ad hoc disputes."
+      3: "Moderate: credible posture and docs; workable dispute path; some evidence."
+      4: "Strong: clear compliance/partnership path; robust dispute handling; mature governance docs."
+      5: "Exemplary: legitimacy engineered end-to-end; operationally trusted and clearly non-coercive."
+    measurement_notes:
+      - "Look for entity docs, terms, policies, and evidence of lawful operation."
+      - "If claims are bold but evidence is thin, score ≤2."
+
+  territory_density:
+    name: "Territory & density"
+    weight: 1.0
+    description: >
+      Measures durable physical grounding and increasing density: recurring gatherings, permanent nodes,
+      leases/land, and sustained local participation (not just one-off events).
+    signals_positive:
+      - "Recurring physical nodes (regular events, coworking, residences)"
+      - "Durable commitments (leases, addresses, long-term hosts, campus/SEZ arrangements)"
+      - "Evidence of increasing density (repeat attendance, residency cycles, local workforce)"
+      - "Place-based services and logistics"
+    signals_negative:
+      - "Online-only with no physical grounding"
+      - "One-off events with no recurrence"
+      - "No evidence of density growth"
+    scoring_anchors:
+      0: "None: purely online; no physical grounding."
+      1: "Minimal: occasional meetups; no continuity."
+      2: "Emerging: recurring events in a few places; limited continuity."
+      3: "Moderate: sustained nodes or repeated popups; some densification evidence."
+      4: "Strong: durable nodes/leases; clear densification; operational physical presence."
+      5: "Exemplary: significant durable territory/density with institutional continuity across locales."
+    measurement_notes:
+      - "Prefer evidence: event history, addresses, leases, partner pages, photos."
+
+  economic_engine:
+    name: "Economic engine"
+    weight: 1.0
+    description: >
+      Measures sustainable value creation: jobs, revenue, exports/services, productive activity,
+      transparent finances—beyond token speculation or membership hype.
+    signals_positive:
+      - "Clear revenue model or sustainable funding"
+      - "Job creation, contracts, or service delivery"
+      - "Transparent budgets and spending"
+      - "Evidence of economic output (products shipped, customers, exports, partnerships)"
+    signals_negative:
+      - "Primarily speculative token dynamics"
+      - "No revenue/funding clarity; perpetual fundraising"
+      - "Value extraction without local or member benefit"
+    scoring_anchors:
+      0: "No engine: extractive or purely speculative."
+      1: "Weak: vague economics; no proof of output."
+      2: "Emerging: early revenue/funding; limited proof of sustained output."
+      3: "Moderate: repeatable engine; some evidence of jobs/output."
+      4: "Strong: clear sustainable engine; transparent finances; consistent output."
+      5: "Exemplary: robust economy with measurable productivity and durable institutions."
+    measurement_notes:
+      - "Prefer audited/transparent numbers; otherwise score conservatively."
+
+  identity_credentials:
+    name: "Identity & credentials rails"
+    weight: 1.0
+    description: >
+      Measures onboarding clarity and verifiable membership/credentialing with privacy and governance:
+      definitions of status, attestations, revocation/dispute pathways, and data minimization.
+    signals_positive:
+      - "Clear onboarding and status definitions (member/participant/resident, etc.)"
+      - "Verifiable credentials or attestations (prefer proofs over raw docs)"
+      - "Issuer governance (who can issue/revoke, under what rules)"
+      - "Dispute and appeal mechanisms"
+      - "Privacy-by-default; minimal data retention"
+    signals_negative:
+      - "Badge theater with no issuer governance"
+      - "Collects sensitive data without policy/minimization"
+      - "No revocation/dispute mechanisms"
+    scoring_anchors:
+      0: "Unsafe/ill-defined: identity claims without governance; privacy risks."
+      1: "Weak: basic onboarding only; no verifiability."
+      2: "Emerging: some attestations; limited governance."
+      3: "Moderate: verifiable rails + some issuer governance + privacy posture."
+      4: "Strong: disciplined credentialing with dispute/revocation; privacy mature."
+      5: "Exemplary: robust, privacy-preserving credential infrastructure with proven governance."
+    measurement_notes:
+      - "If identity involves sensitive data, require explicit policy; otherwise cap at 2–3."
+
+  governance_security:
+    name: "Governance & safety"
+    weight: 1.0
+    description: >
+      Measures whether the project can make decisions and handle conflict safely:
+      documented governance processes, moderation/safety policies, dispute escalation, and enforcement hygiene.
+    signals_positive:
+      - "Documented decision processes and roles"
+      - "Clear dispute resolution and escalation"
+      - "Safety/moderation policy with enforcement practice"
+      - "Transparent accountability and change logs for governance"
+    signals_negative:
+      - "Opaque leadership; arbitrary decisions"
+      - "No safety norms; harassment/abuse unmanaged"
+      - "Governance exists only in rhetoric"
+    scoring_anchors:
+      0: "Dysfunctional: unsafe environment; no governance; high harm risk."
+      1: "Weak: informal leadership with minimal process."
+      2: "Emerging: some docs; inconsistent enforcement."
+      3: "Moderate: workable governance + dispute path; some evidence of enforcement."
+      4: "Strong: mature processes; safety seriously handled; accountable governance."
+      5: "Exemplary: robust governance and safety with proven track record under stress."
+    measurement_notes:
+      - "Prefer evidence: policies, incident handling, governance updates, community health signals."
+
+  execution_capacity:
+    name: "Execution capacity"
+    weight: 1.0
+    description: >
+      Measures ability to ship reliably: release cadence, delivered milestones, operational stability,
+      and measurable outcomes—over perpetual "soon".
+    signals_positive:
+      - "Regular releases/updates and shipped artifacts"
+      - "Operational continuity (events, programs, services) over time"
+      - "Clear roadmaps with completed milestones"
+      - "Measurable outcomes published"
+    signals_negative:
+      - "Perpetual concept stage; no shipped work"
+      - "Inconsistent operations; frequent resets"
+      - "No outcomes, only narrative"
+    scoring_anchors:
+      0: "No execution: stalled or purely conceptual."
+      1: "Weak: sporadic activity; limited outputs."
+      2: "Emerging: some shipping; inconsistent cadence."
+      3: "Moderate: repeatable delivery; evidence of outcomes."
+      4: "Strong: consistent shipping + operational maturity."
+      5: "Exemplary: high reliability, strong cadence, and sustained outcomes."
+    measurement_notes:
+      - "Prefer public changelogs/release notes; otherwise score conservatively."
+
+modifiers:
+  venezuela_similarity:
+    name: "Venezuela fit modifier"
+    range: [-2, 2]
+    description: >
+      Optional modifier for Venezuela instance relevance. Measures diaspora applicability,
+      complementary posture, multilingual readiness, remittance rails, credential portability,
+      and institutional sensitivity. Not part of base global success score.
+    signals_positive:
+      - "Diaspora-first operations and community design"
+      - "Complementary, non-representational posture"
+      - "Multilingual readiness (Spanish/English at minimum)"
+      - "Remittance/financial rails compatible with real-world constraints"
+      - "Credential portability and employment pathways"
+    signals_negative:
+      - "Representation claims or adversarial posture"
+      - "Requires heavy on-ground state cooperation to function"
+      - "No path for diaspora contribution loops"
+    anchor_guidance:
+      "-2": "Actively mismatched: risky posture or incompatible dependencies."
+      "-1": "Low fit: limited relevance to diaspora upgrade loops."
+      "0": "Neutral: generally applicable but not tailored."
+      "+1": "Good fit: several aligned features and posture."
+      "+2": "High fit: strongly aligned to diaspora contribution + complementary institutional design."
