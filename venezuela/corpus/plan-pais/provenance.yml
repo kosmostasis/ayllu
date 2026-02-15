@@ -1,0 +1,8 @@
+# Provenance — Plan País mesa PDFs (Guaidó-era)
+# Updated by scripts/download_corpus.sh on each run.
+version: 0.1
+classification: Plan País
+source_context: Guaidó-era / AN
+
+files: []
+# Each entry: { file: basename, url: ..., capture_time: ISO8601, sha256: ... }
