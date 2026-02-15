@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ministry module",
+  "description": "Schema for a single ministry or meta-capability module",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "purpose": { "type": "string" },
+    "cofog_code": { "type": ["string", "null"] },
+    "sub_units": { "type": "array", "items": { "type": "string" } },
+    "outputs": { "type": "array", "items": { "type": "string" } },
+    "mandatory": { "type": "boolean", "default": false }
+  },
+  "required": ["id", "name", "purpose"]
+}
