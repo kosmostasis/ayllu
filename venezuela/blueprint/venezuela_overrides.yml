@@ -1,0 +1,16 @@
+# Venezuela-specific overrides (ayllu core + diaspora civic infra)
+version: 0.1
+
+positioning:
+  one_liner: "Diaspora civic infrastructure for Venezuelans + allies + future citizens."
+  constraints:
+    - complementary_posture
+    - host_nation_compliant
+    - no_representation_claims
+
+sources_priority:
+  - mcm   # María Corina Machado corpus
+  - plan_pais
+
+civic_houses:
+  stack: [place, services, protocol]
