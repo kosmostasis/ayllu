@@ -37,7 +37,7 @@ The **ayllu** mono-repo implements the AylluOS Cursor Recommendations playbook (
 
 ## 3. Suggestions (from Ayni)
 
-These are recommendations for Koss and Lead Engineering to accept, reject, or adapt. **Do not implement** until leadership has reviewed.
+**Ayni** = the Cursor AI assistant working on this repo (named for the Andean concept of reciprocity/mutual aid). The suggestions below are recommendations for Koss and Lead Engineering to accept, reject, or adapt. **Do not implement** until leadership has reviewed.
 
 ### 3.1 Single source of truth for NS outputs
 
