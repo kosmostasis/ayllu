@@ -16,6 +16,10 @@ venv/
 # Local audit logs (guardrail redactions) — do not commit
 local_audit/
 
+# Reference repos (clone via scripts/clone_references.sh); keep references/README.md committed
+references/*
+!references/README.md
+
 # OS
 .DS_Store
 Thumbs.db
