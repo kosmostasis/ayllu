@@ -37,3 +37,23 @@
 - **Last shipped:** Playbook PR 4 — civic-houses/templates, ops, spec/credentialing_v0.md, kits/Miami-USA, generate_civic_house_kit.py.
 - **Next 3 tasks:** (1) Pilot one city (e.g. Miami-USA): one lead, one venue, one service; report into metrics/ops (2) Keep credentialing at protocol boundary until pilot feedback (3) Generate kits for other pilot cities from shortlist
 - **Blockers / decisions needed from Koss:** Pilot city ownership (WS3 vs named ops lead vs partner)
+
+---
+
+## WS4 Brand Agent
+
+- **Objective:** Brand voice, narrative pillars, STYLE_GUIDE compliance.
+- **Required reading:** [AGENT_REQUIRED_READING.md](AGENT_REQUIRED_READING.md) — brand/STYLE_GUIDE.md, GUARDRAILS.md.
+- **Last shipped:** —
+- **Next 3 tasks:** (1) Apply STYLE_GUIDE to any new copy (2) Ensure Cosmo-Localism and d/acc appear where principles are stated (3) No representation claims; use safe terminology per GUARDRAILS
+- **Blockers / decisions needed from Koss:** —
+
+---
+
+## WS5 UI/UX Agent
+
+- **Objective:** Mobile-first UX, MOBILE_PRINCIPLES, Area page pattern, contribution flows.
+- **Required reading:** [AGENT_REQUIRED_READING.md](AGENT_REQUIRED_READING.md) — ux/MOBILE_PRINCIPLES.md, brand/STYLE_GUIDE.md, GUARDRAILS.md.
+- **Last shipped:** —
+- **Next 3 tasks:** (1) Follow MOBILE_PRINCIPLES for any UI work (2) One next action per screen; trust cues on claims (3) No critical-path poetry
+- **Blockers / decisions needed from Koss:** —
