@@ -1,6 +1,6 @@
 # Venezuela — diaspora civic infrastructure
 
-Complementary to host-state power structures; **no representation claims**. Services, credentials, coordination for Venezuelans + allies + future citizens.
+Complementary to host-state power structures; **no representation claims**. Services, credentials, coordination for Venezuelans + allies + future citizens. Principles: **Cosmo-Localism** and **d/acc** (see [../brand/STYLE_GUIDE.md](../brand/STYLE_GUIDE.md)); serious civic infrastructure, credibility-first.
 
 ## Contents
 
