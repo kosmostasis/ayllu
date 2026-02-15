@@ -199,6 +199,7 @@ if __name__ == "__main__":
     for total, name, s, _ in scored[:25]:
         print(total, name, s)
 
-    out_dir = Path(__file__).resolve().parent.parent / "network-states" / "outputs"
+    # Canonical NS output dir (aligned with ns_ingest_score.py). Legacy "outputs/" deprecated.
+    out_dir = Path(__file__).resolve().parent.parent / "network-states" / "out"
     write_outputs(scored, out_dir)
-    print(f"\nWrote: {out_dir}/top_success_like.md, top_venezuela_similar.md, clusters.md, white_spaces.md")
+    print(f"\nWrote: {out_dir}/ (prefer ns_ingest_score.py for confidence grades and top_success/top_venezuela_fit naming)")
