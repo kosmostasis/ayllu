@@ -1,0 +1,31 @@
+# Orchestration — parallel agents and worktrees
+
+## Roles
+
+- **Orchestrator (main thread):** Sets acceptance criteria, merges PRs, resolves cross-stream conflicts, maintains naming/spec standards.
+- **Specialist agents (parallel):**
+  1. **WS1 Corpus Agent** — Plan País + MCM corpus capture, provenance, indexing, compendium.
+  2. **WS2 Landscape Agent** — NS dataset ingest, enrichment, clustering, scoring.
+  3. **WS3 Civic House Agent** — kits/templates, ops playbooks, credentialing boundary, generator skill.
+  4. **OS Architect Agent** — COFOG baseline + CANON meta-ministries + runtime spec spine.
+
+## Git worktrees (concurrency primitive)
+
+Create isolated worktrees so agents do not collide. Run from repo root:
+
+```bash
+git worktree add ../wt-os-arch -b wt/os-arch
+git worktree add ../wt-ws1-corpus -b wt/ws1-corpus
+git worktree add ../wt-ws2-ns -b wt/ws2-ns
+git worktree add ../wt-ws3-civic -b wt/ws3-civic
+```
+
+Each worktree runs one agent. Each agent submits PRs into `main`.
+
+## Status
+
+See [STATUS.md](STATUS.md) for per-agent objective, last shipped, next tasks, blockers.
+
+## Reference
+
+Execution plan: AylluOS leadership recommendations (Cursor plan). Guardrails: [GUARDRAILS.md](GUARDRAILS.md).
