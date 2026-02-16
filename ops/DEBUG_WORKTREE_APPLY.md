@@ -2,7 +2,7 @@
 
 **Use this every time Cursor apply or git merge fails.**
 
-**Part D — Canonical script paths:** Scripts already use repo-relative paths (`Path(__file__).resolve().parent.parent` in Python; `$(dirname "$0")/..` in bash). Any file targeting `/Users/.../ayllu/...` must be rewritten to `scripts/...` or other repo-relative path before applying.
+**Part D — Canonical script paths:** Scripts already use repo-relative paths (`Path(__file__).resolve().parent.parent` in Python; `$(dirname "$0")/..` in bash). Any file targeting `$REPO_ROOT/...` must be rewritten to `scripts/...` or other repo-relative path before applying.
 
 ---
 

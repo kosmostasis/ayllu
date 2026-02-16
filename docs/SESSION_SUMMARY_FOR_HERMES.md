@@ -27,8 +27,8 @@
 **Message:** `Failed to apply worktree to current branch: Unable to write file '/Users/Documents/GitHub/ayllu/scripts/generate_civic_house_kit.py' (EACCES: permission denied, mkdir '/Users/Documents')`
 
 **Root cause:** Cursor IDE constructs the target path incorrectly. The path is missing the username:
-- **Expected:** `/Users/knobs/Documents/GitHub/ayllu/...`
-- **Actual:** `/Users/Documents/GitHub/ayllu/...`
+- **Expected:** `$REPO_ROOT/...`
+- **Actual:** `/Users/Documents/...` (missing username)
 
 When Cursor tries to write the file, it attempts `mkdir '/Users/Documents'`, which fails with EACCES (and is wrong — Documents lives under `/Users/<username>/`).
 
@@ -37,7 +37,7 @@ When Cursor tries to write the file, it attempts `mkdir '/Users/Documents'`, whi
 ---
 
 ### Error B: Git merge — worktree conflict
-**Message:** `fatal: 'main' is already used by worktree at '/Users/knobs/Documents/GitHub/ayllu'`
+**Message:** `fatal: 'main' is already used by worktree at $REPO_ROOT`
 
 **Context:** User committed changes in the `ccz` worktree, then tried `git checkout main` and `git merge ccz` from that same worktree.
 

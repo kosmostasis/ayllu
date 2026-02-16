@@ -20,7 +20,7 @@ Unable to write file '/Users/Documents/GitHub/ayllu/scripts/generate_civic_house
 
 | Expected (correct) | Actual (bug) |
 |--------------------|--------------|
-| `/Users/knobs/Documents/GitHub/ayllu/...` | `/Users/Documents/GitHub/ayllu/...` |
+| `$REPO_ROOT/...` (e.g. `~/Documents/GitHub/ayllu`) | `/Users/Documents/...` (missing username) |
 
 When Cursor tries to write the file, it first runs `mkdir '/Users/Documents'`, which:
 - Fails with EACCES (permission denied)
@@ -32,17 +32,16 @@ When Cursor tries to write the file, it first runs `mkdir '/Users/Documents'`, w
 
 | Item | Value |
 |------|-------|
-| **Main repo** | `/Users/knobs/Documents/GitHub/ayllu` |
-| **Worktree (ccz)** | `/Users/knobs/.cursor/worktrees/ayllu/ccz` |
+| **Main repo** | `$REPO_ROOT` |
+| **Worktree (ccz)** | `$REPO_ROOT` (via worktree) |
 | **Main branch** | `main` @ 6dc4e30 |
 | **Worktree HEAD** | 2853c0b (detached) |
 | **OS** | macOS (darwin) |
 
 ```
 git worktree list:
-/Users/knobs/Documents/GitHub/ayllu       6dc4e30 [main]
-/Users/knobs/.cursor/worktrees/ayllu/ccz  2853c0b (detached HEAD)
-/Users/knobs/.cursor/worktrees/ayllu/fra  ff80a13 (detached HEAD)
+$REPO_ROOT       [main]
+$REPO_ROOT/ccz   (detached HEAD)
 ...
 ```
 
@@ -61,11 +60,9 @@ git worktree list:
 
 ## 5. Hypothesis to test: doc context pollution
 
-**Idea:** Cursor may use repo file content as context when building paths. Our docs contain literal paths like `/Users/knobs/Documents/GitHub/ayllu` (in SESSION_SUMMARY, examples, etc.). If Cursor's path logic reads these and incorrectly normalizes them (e.g. strips username), that could cause the bug.
+**Idea:** Cursor may use repo file content as context when building paths. Docs that contained literal paths (e.g. `$REPO_ROOT`) could be incorrectly normalized (e.g. strips username). We sanitized to `$REPO_ROOT` placeholders.
 
-**Test:** Replace all literal absolute paths in docs with placeholders:
-- `/Users/knobs/Documents/GitHub/ayllu` → `$REPO_ROOT` or `~/Documents/GitHub/ayllu` (tilde form)
-- `/Users/<username>/Documents/GitHub/<REPO>` in examples
+**Test:** Use `$REPO_ROOT` or `~/Documents/GitHub/<repo>` in examples; avoid literal `/Users/...` paths.
 
 Then retry Cursor apply. If it still fails, the bug is purely in Cursor's internal path resolution.
 
@@ -77,7 +74,7 @@ Then retry Cursor apply. If it still fails, the bug is purely in Cursor's intern
 
 2. **Workaround** — Until fixed, always use terminal:
    ```bash
-   cd ~/Documents/GitHub/ayllu   # or AylluOS after rename
+   cd $REPO_ROOT   # e.g. ~/Documents/GitHub/AylluOS (after rename) or ayllu (current)
    git cherry-pick <commit_sha>
    ```
 
@@ -91,4 +88,4 @@ Then retry Cursor apply. If it still fails, the bug is purely in Cursor's intern
 - `ops/DEBUG_WORKTREE_APPLY.md` — A5 example
 - `ops/RENAME_TO_AYLLUOS.md` — C3, C4 examples
 
-Replace with `$REPO_ROOT` or `~/Documents/GitHub/ayllu` (or `AylluOS`).
+Replace with `$REPO_ROOT` or `~/Documents/GitHub/AylluOS` (after rename).
