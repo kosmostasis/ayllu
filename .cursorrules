@@ -1,0 +1,11 @@
+# Cursor rules — AylluOS
+
+## Path rules (hard)
+
+- **Never output absolute paths** in patches, file operations, or generated content. Use repo-relative paths only (e.g. `scripts/...`, `ops/...`, `docs/...`).
+- Hard-fail: if any path begins with `/Users/`, `~/` (when used as output target), or escapes repo via `../` → do not apply.
+- External docs: import to `inbox/external_docs/` first; operate only on in-repo copy.
+
+## Apply/merge failures
+
+When Cursor apply-worktree or merge fails, follow `ops/DEBUG_WORKTREE_APPLY.md`. Prefer terminal `git cherry-pick` over Cursor apply.

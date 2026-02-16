@@ -39,13 +39,13 @@ When Cursor tries to write the file, it attempts `mkdir '/Users/Documents'`, whi
 ### Error B: Git merge — worktree conflict
 **Message:** `fatal: 'main' is already used by worktree at '/Users/knobs/Documents/GitHub/ayllu'`
 
-**Context:** User committed changes in the `ccz` worktree (`/Users/knobs/.cursor/worktrees/ayllu/ccz`), then tried `git checkout main` and `git merge ccz` from that same worktree.
+**Context:** User committed changes in the `ccz` worktree, then tried `git checkout main` and `git merge ccz` from that same worktree.
 
-**Root cause:** `main` is checked out in the main repo at `/Users/knobs/Documents/GitHub/ayllu`. A branch can only be checked out in one worktree at a time. The `ccz` worktree is in detached HEAD (commit `2853c0b`).
+**Root cause:** `main` is checked out in the main repo. A branch can only be checked out in one worktree at a time. A branch can only be checked out in one worktree at a time. The `ccz` worktree is in detached HEAD (commit `2853c0b`).
 
 **Workaround:** Cherry-pick from the main repo:
 ```bash
-cd /Users/knobs/Documents/GitHub/ayllu
+cd $REPO_ROOT   # or: cd ~/Documents/GitHub/ayllu
 git cherry-pick 2853c0b
 ```
 
@@ -66,7 +66,7 @@ git cherry-pick 2853c0b
 
 1. **Integrate commit 2853c0b into main** (from main repo):
    ```bash
-   cd /Users/knobs/Documents/GitHub/ayllu
+   cd $REPO_ROOT   # or: cd ~/Documents/GitHub/ayllu
    git cherry-pick 2853c0b
    ```
 

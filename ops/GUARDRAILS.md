@@ -2,7 +2,11 @@
 
 Tracked in repo. Any automated or manual guardrail edit must be logged in **local-only** `local_audit/guardrail_redactions.md` (see [../docs/local_audit_redaction_format.md](../docs/local_audit_redaction_format.md)). Do not commit `local_audit/`.
 
-**Path conventions:** No absolute paths in code, scripts, docs, or patches. External docs must be imported to `inbox/external_docs/` first (see `scripts/import_external_docs.sh`), then referenced by repo-relative path.
+**Path conventions (hard rules):**
+
+- **B1) Absolute paths forbidden** — Never write or reference `/Users/…` paths in patches, scripts, docs, or configs. All outputs must be repo-relative.
+- **B2) External docs** — If an input doc exists outside repo (Desktop/Downloads/etc.), copy it into `inbox/external_docs/<original_filename>` first. Only operate on the in-repo copy. See `scripts/import_external_docs.sh`.
+- **B3) Standard locations** — `scripts/`, `inbox/external_docs/`, `references/`, `ops/`, `docs/`, `apps/`, `packages/`, `countries/`.
 
 ---
 

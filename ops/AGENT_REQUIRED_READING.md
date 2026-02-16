@@ -3,7 +3,8 @@
 Agents must read and follow these before editing in their domain.
 
 ## All agents
-- [GUARDRAILS.md](GUARDRAILS.md) — disallowed phrasing, safe terminology, privacy. Guardrail-triggered edits go in `local_audit/guardrail_redactions.md` only (local-only, gitignored).
+- [GUARDRAILS.md](GUARDRAILS.md) — disallowed phrasing, safe terminology, privacy, **path rules** (no absolute paths). Guardrail-triggered edits go in `local_audit/guardrail_redactions.md` only (local-only, gitignored).
+- [DEBUG_WORKTREE_APPLY.md](DEBUG_WORKTREE_APPLY.md) — when apply/merge fails, follow A0–A7; escalate to Hermes if errors persist.
 
 ## WS4 (Brand Agent)
 - [../brand/STYLE_GUIDE.md](../brand/STYLE_GUIDE.md)

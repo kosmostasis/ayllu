@@ -32,11 +32,13 @@ See [STATUS.md](STATUS.md) for per-agent objective, last shipped, next tasks, bl
 
 See [AGENT_REQUIRED_READING.md](AGENT_REQUIRED_READING.md) for per-agent required reading (STYLE_GUIDE, MOBILE_PRINCIPLES, GUARDRAILS, rubric).
 
-## Path conventions
+## Path conventions (hard rules)
 
-- **No absolute paths** in code, scripts, docs, or patches (e.g. no `/Users/...`, `/home/...`).
-- **External docs:** Import to `inbox/external_docs/` first via `scripts/import_external_docs.sh`; reference as `inbox/external_docs/<filename>`.
-- **References:** Clone into `references/` via `scripts/clone_references.sh` (repo-relative).
+- **B1)** No absolute paths in code, scripts, docs, or patches. Hard-fail if any path begins with `/Users/`, `~/`, or escapes repo via `../`.
+- **B2)** External docs → `inbox/external_docs/` first; operate only on in-repo copy.
+- **B3)** Standard locations: `scripts/`, `inbox/external_docs/`, `references/`, `ops/`, `docs/`, `apps/`, `packages/`, `countries/`.
+- **Debugging:** See [DEBUG_WORKTREE_APPLY.md](DEBUG_WORKTREE_APPLY.md) when apply/merge fails.
+- **Escalation:** If Cursor apply continues to generate `/Users/Documents/...` (missing username), merge conflicts you can't resolve, or repeated EACCES after path normalization → STOP and report to Hermes with exact error + context.
 
 ## Reference
 
