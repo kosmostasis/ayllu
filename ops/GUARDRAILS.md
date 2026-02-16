@@ -2,6 +2,8 @@
 
 Tracked in repo. Any automated or manual guardrail edit must be logged in **local-only** `local_audit/guardrail_redactions.md` (see [../docs/local_audit_redaction_format.md](../docs/local_audit_redaction_format.md)). Do not commit `local_audit/`.
 
+**Path conventions:** No absolute paths in code, scripts, docs, or patches. External docs must be imported to `inbox/external_docs/` first (see `scripts/import_external_docs.sh`), then referenced by repo-relative path.
+
 ---
 
 ## Disallowed phrasing

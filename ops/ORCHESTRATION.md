@@ -32,6 +32,12 @@ See [STATUS.md](STATUS.md) for per-agent objective, last shipped, next tasks, bl
 
 See [AGENT_REQUIRED_READING.md](AGENT_REQUIRED_READING.md) for per-agent required reading (STYLE_GUIDE, MOBILE_PRINCIPLES, GUARDRAILS, rubric).
 
+## Path conventions
+
+- **No absolute paths** in code, scripts, docs, or patches (e.g. no `/Users/...`, `/home/...`).
+- **External docs:** Import to `inbox/external_docs/` first via `scripts/import_external_docs.sh`; reference as `inbox/external_docs/<filename>`.
+- **References:** Clone into `references/` via `scripts/clone_references.sh` (repo-relative).
+
 ## Reference
 
 Execution plan: AylluOS leadership recommendations (Cursor plan). Guardrails: [GUARDRAILS.md](GUARDRAILS.md).
