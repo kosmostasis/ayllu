@@ -7,6 +7,7 @@ Tracked in repo. Any automated or manual guardrail edit must be logged in **loca
 - **B1) Absolute paths forbidden** — Never write or reference `/Users/…` paths in patches, scripts, docs, or configs. All outputs must be repo-relative.
 - **B2) External docs** — If an input doc exists outside repo (Desktop/Downloads/etc.), copy it into `inbox/external_docs/<original_filename>` first. Only operate on the in-repo copy. See `scripts/import_external_docs.sh`.
 - **B3) Standard locations** — `scripts/`, `inbox/external_docs/`, `references/`, `ops/`, `docs/`, `apps/`, `packages/`, `countries/`.
+- **Pre-commit check:** Run `scripts/check_no_absolute_paths.sh` before committing. Fails if staged diff contains `/Users/`.
 
 ---
 
